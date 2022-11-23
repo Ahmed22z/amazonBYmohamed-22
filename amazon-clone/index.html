@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>amazon clone</title>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel = "stylesheet" href = "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="header bg-gray-900 h-16 items-center flex">
+           <!--amazon log-->
+           <div class="logo w-1/5 h-16 ml-10 ">
+            <a href="#">
+                <img class=" w-28 h-16 object-contain" src="https://www.pinclipart.com/picdir/big/57-576184_view-our-amazon-storefront-amazon-logo-white-png.png" alt="" srcset="">
+                            
+            </a>
+ 
+           </div> 
+           <!--search-->
+           <input type="text" id="search" placeholder="search..." class="h-9 w-30 bg-gray-800 border border-gray-500 border-opacity-75 rounded-l-xl px-3 text-white ml-6 placeholder-white focus:outline-none">
+            <div class=" categories h-9 w-30 bg-gray-800 border border-gray-500 border-opacity-75 px-3 text-white flex items-center cursor-pointer">
+                    categories
+                    <svg class=" h-4 w-4 ml-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+                      </svg>                      
+            </div>
+            <div class=" search-icon bg-yellow-500 text-white h-9 w-10 rounded-r-xl flex items-center justify-center cursor-pointer"> 
+                <svg class=" items-center w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                    <path fill-rule="evenodd" d="M9 3.5a5.5 5.5 0 100 11 5.5 5.5 0 000-11zM2 9a7 7 0 1112.452 4.391l3.328 3.329a.75.75 0 11-1.06 1.06l-3.329-3.328A7 7 0 012 9z" clip-rule="evenodd" />
+                  </svg>
+                  
+            </div>
+            <!--right icons-->
+            <div class=" icon flex items-center text-center text-white ml-auto mr-8 w-48 h-16 justify-around ">
+                <svg class=" h-4 w-4 cursor-pointer mr-4 " xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                    <path d="M9.653 16.915l-.005-.003-.019-.01a20.759 20.759 0 01-1.162-.682 22.045 22.045 0 01-2.582-1.9C4.045 12.733 2 10.352 2 7.5a4.5 4.5 0 018-2.828A4.5 4.5 0 0118 7.5c0 2.852-2.044 5.233-3.885 6.82a22.049 22.049 0 01-3.744 2.582l-.019.01-.005.003h-.002a.739.739 0 01-.69.001l-.002-.001z" />
+                  </svg>  
+                  <a href="#">
+                    <div class="cart-icon h-10 w-10 text-gray-900 bg-yellow-500 rounded-xl flex items-center justify-center mr-4 relative">
+                        <a href="#">
+                        <svg class=" h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+                          </svg>
+                        <div class=" cart-count text-gray-800 bg-white border rounded-full w-4 h-4 flex items-center justify-center
+                        text-xs absolute -top-1 -right-1">
+                             
+                        </div>
+                    </a>
+                          
+                    </div>
+                  </a> 
+                  <svg class=" h-4 w-4 mr-4 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0" />
+                  </svg>
+                    <div class="h-12 w-12 ml-2 border-4 border-yellow-500 rounded-full border-double overflow-hidden">
+                        <img src="https://www.plays-in-business.com/wp-content/uploads/2016/01/young-man-with-dimples.jpg" alt="" srcset="">
+                    </div>             
+            </div>
+    </header>
+    <!--main section-->
+    <main class=" h-full flex">
+            <!--sidebar-->
+            <section class=" main-sidebar bg-gray-500 w-1/5 p-6 border-t-2 border-gray-700">
+                <div class="sidebar-categories sticky top-10">
+                    <div data-filter="all" class="list sidebar-main-category text-yellow-500 cursor-pointer flex font-bold mb-4 p2 bg-gray-700 rounded-lg">
+                       <span class=" w-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 01-1.125-1.125M3.375 19.5h7.5c.621 0 1.125-.504 1.125-1.125m-9.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-7.5A1.125 1.125 0 0112 18.375m9.75-12.75c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125m19.5 0v1.5c0 .621-.504 1.125-1.125 1.125M2.25 5.625v1.5c0 .621.504 1.125 1.125 1.125m0 0h17.25m-17.25 0h7.5c.621 0 1.125.504 1.125 1.125M3.375 8.25c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m17.25-3.75h-7.5c-.621 0-1.125.504-1.125 1.125m8.625-1.125c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M12 10.875v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 10.875c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125M13.125 12h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125M20.625 12c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5M12 14.625v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 14.625c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125m0 1.5v-1.5m0 0c0-.621.504-1.125 1.125-1.125m0 0h7.5" />
+                          </svg>
+                        </span>
+                        <span>All categories</span>
+                        
+                          
+                    </div>
+                    <div data-filter="laptop" class="sidebar-main-category list text-white cursor-pointer flex font-bold mb-2 p-2">
+                        <span class="w-8"></span>
+                        <span>Laptop</span>
+                   </div>
+                   <div data-filter="mobile" class="sidebar-main-category list text-white cursor-pointer flex font-bold mb-2 p-2">
+                    <span class="w-8"></span>
+                    <span>mobile</span>
+               </div>
+               <div data-filter="tv" class="show-product1 list sidebar-main-category text-white cursor-pointer flex font-bold mb-2 p-2">
+                <span class="w-8"></span>
+                <span>TV</span>
+           </div>
+           <div data-filter="games" class="sidebar-main-category list text-white cursor-pointer flex font-bold mb-2 p-2">
+            <span class="w-8"></span>
+            <span>games</span>
+       </div>
+       <!-- <div class="sidebar-main-category list text-white cursor-pointer flex font-bold mb-2 p-2">
+        <span class="w-8"></span>
+        <span>Home and garden</span>
+   </div> -->
+   <div data-filter="fashion" class="sidebar-main-category list text-white cursor-pointer flex font-bold mb-2 p-2">
+    <span class="w-8"></span>
+    <span>fashion</span>
+</div>
+<div class="sidebar-main-category list text-white cursor-pointer flex font-bold mb-2 p-2">
+    <span class="w-8">
+        <i class="fa-regular fa-percent"></i>
+    </span>
+    <span>sell on amazon</span>
+</div>
+<div class="sidebar-main-category text-white cursor-pointer flex font-bold mb-2 p-2">
+    <span class="w-8">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 11.25l.041-.02a.75.75 0 011.063.852l-.708 2.836a.75.75 0 001.063.853l.041-.021M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9-3.75h.008v.008H12V8.25z" />
+          </svg>
+              </span>
+    <span>help</span>
+</div>
+           
+                </div>
+            </section>
+            <section class="main-section flex-1 p-6 bg-gray-100">
+                <!--slider start-->
+                 <div id="bgi" class=" main-section-banner h-64 rounded-lg flex items-end relative">
+                    <div class="flex justify-between mb-56 ">
+                    <button class="absolute top-0 left-0 ml-4" id="back">
+                        <svg class=" w-10 h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
+                          </svg>
+                          
+                    </button>
+                    <button class="absolute top-0 right-0 mr-4"  id="next">
+                        <svg class=" w-10 h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                          </svg>
+                          
+                    </button>
+                    </div>
+                    <!--slider end-->
+                    <div class=" button bg-white w-36 h-10 rounded-full flex justify-center text-center m-4 cursor-pointer">
+                        <h4 class=" text-yellow-500 font-bold self-center" > browse Products</h4>
+                   </div>
+
+                 </div>
+                 <div class="main-section-categories mt-10">
+                    <div class="popular font-bold text-gray-700 text-2xl flex items-center">Popular categories
+                        <svg class="h-6 w-8 text-yellow-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                            <path fill-rule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clip-rule="evenodd" />
+                          </svg>
+                        </div>
+                          
+                    </h1>
+                    <div class="categories flex flex-wrap">
+                        <div class=" mr-6 icon-desktop h-20 w-20 bg-white rounded-xl mt-3 text-center flex justify-center items-center">
+                            <svg class="h-12 w-12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6">
+                                <path fillRule="evenodd" d="M2.25 5.25a3 3 0 013-3h13.5a3 3 0 013 3V15a3 3 0 01-3 3h-3v.257c0 .597.237 1.17.659 1.591l.621.622a.75.75 0 01-.53 1.28h-9a.75.75 0 01-.53-1.28l.621-.622a2.25 2.25 0 00.659-1.59V18h-3a3 3 0 01-3-3V5.25zm1.5 0v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5z" clipRule="evenodd" />
+                              </svg>
+                              
+                        </div>
+                        <div class=" mr-6 icon-gift h-20 w-20 bg-white rounded-xl mt-3 text-center flex justify-center items-center">
+                            <svg class="h-12 w-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+                              </svg>                              
+                              
+                        </div>
+                        <div class=" mr-6 icon-mobile h-20 w-20 bg-white rounded-xl mt-3 text-center flex justify-center items-center">
+                            <svg class="h-12 w-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" />
+                              </svg>                              
+                              
+                        </div> <div class=" mr-6 icon-book h-20 w-20 bg-white rounded-xl mt-3 text-center flex justify-center items-center">
+                            <svg class="h-12 w-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                              </svg>                              
+                              
+                        </div> <div class=" mr-6 icon-camera h-20 w-20 bg-white rounded-xl mt-3 text-center flex justify-center items-center">
+                            <svg class="h-12 w-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zM18.75 10.5h.008v.008h-.008V10.5z" />
+                              </svg>                              
+                              
+                        </div> <div class=" mr-6 icon-music h-20 w-20 bg-white rounded-xl mt-3 text-center flex justify-center items-center">
+                            <svg class="h-12 w-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 9l10.5-3m0 6.553v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 11-.99-3.467l2.31-.66a2.25 2.25 0 001.632-2.163zm0 0V2.25L9 5.25v10.303m0 0v3.75a2.25 2.25 0 01-1.632 2.163l-1.32.377a1.803 1.803 0 01-.99-3.467l2.31-.66A2.25 2.25 0 009 15.553z" />
+                              </svg>                              
+                              
+                        </div>
+                        <div class=" mr-6 icon-desktop h-20 w-20 bg-white rounded-xl mt-3 text-center flex justify-center items-center">
+                            <svg class="h-12 w-12" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18" />
+                              </svg>                              
+                              
+                        </div>
+                        </div>
+                       
+                    </div>
+                    <div class="main-section mt-5">
+                        <h1 class="hot-deals font-bold text-gray-700 text-2xl flex items-center mb-5">
+                            Hot Deals
+                        </h1>
+                        <div class="product-div main-section-product flex flex-wrap " >
+                            <div data-f="mobile"  class=" product1 mobile  Kindle p-6 flex flex-col items-center justify-center">
+                            <div class="producyt-image w-48 h-52 bg-white rounded-lg p-4 flex items-center justify-center ">
+                                <img class=" h-40 self-center" src="https://m.media-amazon.com/images/I/61hj2b6hVJL._AC_UL480_FMwebp_QL65_.jpg" alt="">
+                                
+                            </div>
+                            <span class="font-sans text-black font-bold text-xl shadow-lg cursor-pointer p-4 hover:bg-violet-400 hover:text-violet-300">5000EGP</span>
+
+                            <div class="product-name text-black text-center text-sm w-64 ">
+                                Xiaomi Redmi Note 11,90 Hz Amoled Pioneer, 128 GB, 6GB RAM
+                            </div>
+                            <button id='button'>shop now</button>
+
+                           </div>
+                           <div data-f='kindle'  class="product1 mobile Kindle p-6 flex flex-col items-center justify-center">
+                            <div class="product-image w-48 h-52 bg-white rounded-lg p-4 flex justify-center ">
+                                <img class=" h-40 " src="https://m.media-amazon.com/images/I/61CyntgnNaL._AC_UL480_FMwebp_QL65_.jpg" alt="">
+                                
+                            </div>
+                            <span class="font-sans text-black font-bold text-xl shadow-lg cursor-pointer p-4 hover:bg-violet-400 hover:text-violet-300">6500EGP</span>
+
+                            <div class="product-name text-black text-center text-sm w-64 ">
+                                Xiaomi 11T Moonlight White 8GB RAM 256GB ROM
+                            </div>
+
+                           </div>
+                           <div data-f="laptop" class=" laptop product1 p-6 flex flex-col items-center justify-center">
+                            <div class="producyt-image w-48 h-52 bg-white rounded-lg p-4 ">
+                                <img src="https://m.media-amazon.com/images/I/61yTSCamQKL._AC_UL480_FMwebp_QL65_.jpg" alt="">
+                                
+                            </div>
+                            <span class="font-sans text-black font-bold text-xl shadow-lg cursor-pointer p-4 hover:bg-violet-400 hover:text-violet-300">9000EGP</span>
+
+                            <div class="product-name text-black text-center text-sm w-64 ">
+                                Lenovo V14 82C6006GED - AMD 3020E, 4GB RAM, 1TB HDD, AMD Radeon Graphics, 14 Inch HD 220nits Anti-glare
+                            </div>
+
+                           </div>
+                           <div data-f="laptop" class="laptop product1 p-6 flex flex-col items-center justify-center">
+                            <div class="producyt-image w-48 h-52 bg-white rounded-lg p-4 ">
+                                <img src="https://m.media-amazon.com/images/I/81QGhmhCNuL._AC_UL480_FMwebp_QL65_.jpg" alt="">
+                                
+                            </div>
+                            <span class="font-sans text-black font-bold text-xl shadow-lg cursor-pointer p-4 hover:bg-violet-400 hover:text-violet-300">10000EGP</span>
+
+                            <div class="product-name text-black text-center text-sm w-64 ">
+                                HP 255 G8 Laptop - Ryzen 5 5500U 6-Cores, 16GB RAM, 512GB SSD, 
+                            </div>
+
+                           </div>
+                           <div data-f="laptop" class="laptop product1 p-6 flex flex-col items-center justify-center">
+                            <div class="producyt-image w-48 h-52 bg-white rounded-lg p-4 ">
+                                <img src="https://m.media-amazon.com/images/I/81y0YdBB+ML._AC_UL480_FMwebp_QL65_.jpg" alt="">
+                                
+                            </div>
+                            <span class="font-sans text-black font-bold text-xl shadow-lg cursor-pointer p-4 hover:bg-violet-400 hover:text-violet-300">10500EGP</span>
+
+                            <div class="product-name text-black text-center text-sm w-64 ">
+                                Dell G15 15-5515 Gaming laptop - Ryzen 7 5800H 8 Cores, 8 GB RAM
+                            </div>
+
+                           </div>
+                           <div data-f="laptop" class=" product1 laptop p-6 flex flex-col items-center justify-center">
+                            <div class="producyt-image w-48 h-52 bg-white rounded-lg p-4 ">
+                                <img src="https://m.media-amazon.com/images/I/81qohiv33aL._AC_UL480_FMwebp_QL65_.jpg" alt="">
+                                
+                            </div>
+                            <span class="font-sans text-black font-bold text-xl shadow-lg cursor-pointer p-4 hover:bg-violet-400 hover:text-violet-300">8500EGP</span>
+                            <div class="product-name text-black text-center text-sm w-64 ">
+                                HP 15-dw3033dx Laptop - 11th Intel core i3-1115G4, 8GB RAM, 256GB SSD
+                            </div>
+
+                           </div>
+                           <!--TV-->
+                           <div data-f="tv"  class="tv product1  p-6 flex flex-col items-center justify-center">
+                            <div class="producyt-image w-48 h-52 bg-white rounded-lg p-4 flex items-center justify-center ">
+                                <img class=" h-40 self-center" src="https://m.media-amazon.com/images/I/71SCPEYWQbL._AC_SL1100_.jpg" alt="">
+                                
+                            </div>
+                            <span class="font-sans text-black font-bold text-xl shadow-lg cursor-pointer p-4 hover:bg-violet-400 hover:text-violet-300">4000EGP</span>
+
+                            <div class="product-name text-black text-center text-sm w-64 ">
+                                LG UHD 4K TV 43 Inch UQ7500 Series                            </div>
+                            <button id='button'>shop now</button>
+
+                           </div>
+                           <div data-f="mobile"  class="tv product1  p-6 flex flex-col items-center justify-center">
+                            <div class="producyt-image w-48 h-52 bg-white rounded-lg p-4 flex items-center justify-center ">
+                                <img class=" h-40 self-center" src="https://m.media-amazon.com/images/I/81lhn-q9UjL._AC_SL1500_.jpg" alt="">
+                                
+                            </div>
+                            <span class="font-sans text-black font-bold text-xl shadow-lg cursor-pointer p-4 hover:bg-violet-400 hover:text-violet-300">4900EGP</span>
+
+                            <div class="product-name text-black text-center text-sm w-64 ">
+                                LG UHD 4K TV 50 Inch UQ9100 Series, Cinema Screen Design 4K                            </div>
+                            <button id='button'>shop now</button>
+
+                           </div>
+                           <!--fashion-->
+                           <!--1-->
+                           <div data-f="mobile"  class=" fashion product1 p-6 flex flex-col items-center justify-center">
+                            <div class="producyt-image w-48 h-52 bg-white rounded-lg p-4 flex items-center justify-center ">
+                                <img class=" h-40 self-center" src="https://m.media-amazon.com/images/I/617xBJC0DhL._AC_SY575_.jpg" alt="">
+                                
+                            </div>
+                            <span class="font-sans text-black font-bold text-xl shadow-lg cursor-pointer p-4 hover:bg-violet-400 hover:text-violet-300">200EGP</span>
+                            <div class="product-name text-black text-center text-sm w-64 ">
+                                Adidas PREDATOR EDGE.4 FxG J
+                            </div>
+                            <button id='button'>shop now</button>
+
+                           </div>
+                            <!--2-->
+                           <div data-f="mobile"  class="fashion product1 p-6 flex flex-col items-center justify-center">
+                            <div class="producyt-image w-48 h-52 bg-white rounded-lg p-4 flex items-center justify-center ">
+                                <img class=" h-40 self-center" src="https://m.media-amazon.com/images/I/71qnnAKThuS._AC_SX575_.jpg" alt="">
+                                
+                            </div>
+                            <span class="font-sans text-black font-bold text-xl shadow-lg cursor-pointer p-4 hover:bg-violet-400 hover:text-violet-300">Not available</span>
+
+                            <div class="product-name text-black text-center text-sm w-64 ">
+                                adidas Mens Runfalcon 2.0 Sneaker Athletic MNS Running Shoe
+                            </div>
+                            <button id='button'>shop now</button>
+
+                           </div>
+                           <!--video games-->
+                           <!--1-->
+                           <div data-f="mobile"  class=" product1 games p-6 flex flex-col items-center justify-center">
+                            <div class="producyt-image w-48 h-52 bg-white rounded-lg p-4 flex items-center justify-center ">
+                                <img class=" h-40 self-center" src="https://m.media-amazon.com/images/I/513RExx3wkL._AC_SL1000_.jpg" alt="">
+                                
+                            </div>
+                            <span class="font-sans text-black font-bold text-xl shadow-lg cursor-pointer p-4 hover:bg-violet-400 hover:text-violet-300">900EGP</span>
+                            <div class="product-name text-black text-center text-sm w-64 ">
+                                Sony Ps4 Dualshock 4 Wireless Controller, Jet Black
+                            </div>
+                            <button id='button'>shop now</button>
+
+                           </div>
+                           <!--2-->
+                           <div data-f="mobile"  class=" product1 games p-6 flex flex-col items-center justify-center">
+                            <div class="producyt-image w-48 h-52 bg-white rounded-lg p-4 flex items-center justify-center ">
+                                
+                                <img class=" h-40 self-center" src="https://m.media-amazon.com/images/I/71qhevnVShS._AC_SL1500_.jpg" alt="">
+                                
+                            </div>
+                            <span class="font-sans text-black font-bold text-xl shadow-lg cursor-pointer p-4 hover:bg-violet-400 hover:text-violet-300">300EGP</span>
+                            <div class="product-name text-black text-center text-sm w-64 ">
+                                PS4 Gaming Headset with mic Kids Headphone for Xbox One PS5 Nintendo Switch Lite PC Computer Mac Fortnite Tablet
+                            </div>
+                            <button id='button'>shop now</button>
+                            <div id="rateYo" class="star ">                                                                                                                                           
+                            </div>
+                            <p class="alert"></p>
+
+                           </div>
+                           </div>
+                        </div>
+                
+
+            </section>
+    </main>
+    <script
+  src="https://code.jquery.com/jquery-3.6.1.js"
+  integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+  crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.3.2/jquery.rateyo.min.js"></script>
+
+   <script >
+    $(document).ready(function(){
+        let i=0
+      var loca=localStorage.getItem('local')
+      $('.cart-count').html(+loca);
+
+
+
+$('#button').click(function(){
+    i+=+loca
+   i++
+   $('.cart-count').html(i);
+   let cloning= $(this).parent().clone();
+   localStorage.setItem('testObject', JSON.stringify(cloning));
+   var loc=i.toString()
+   localStorage.setItem("local", loc)
+
+});
+$('.list').click(function(){
+    let value=$(this).attr('data-filter')
+    if(value=='all'){
+           $('.product1').show('1000')
+           $('.list').css('background','')
+    }
+    else{
+        $('.product1').not('.'+value).hide('1000')
+        $('.product1').filter('.'+value).show('1000')
+        $('.list').css('background','')
+    }
+    
+});
+$('.search-icon').click(function(){
+    let value2=$('.list').attr('data-filter')
+    $('.list').css('background','')
+     let value=$('#search').val()
+     let cl=$('.product1').attr('data-f')
+     if(value==''){
+        $('.product1').show('1000')
+
+    }
+        else{
+            $('.product1').not('.'+value).hide('1000')
+        $('.product1').filter('.'+value).show('1000')
+        $('.list').filter('[data-filter="' + value + '"]').css('background','red')
+
+        }
+     });
+     $(function () {
+     $("#rateYo").rateYo({
+ 
+ onSet: function (rating, rateYoInstance) {
+
+   $('.alert').html(rating)
+ }
+})});
+var k=0;
+    var images=["https://m.media-amazon.com/images/I/6174W5K2+6L._SX3000_.jpg","https://m.media-amazon.com/images/I/71VIeCC93yL._SX3000_.jpg","https://m.media-amazon.com/images/I/61hy4hAOeBL._SX3000_.jpg"];
+    $("#bgi").css("background-image","url("+images[k]+")");
+    $("#next").click(function(){
+        k++;
+        if(k>(images.length-1)){
+            k=0;
+            $("#bgi").css("background-image","url("+images[k]+")")
+        }
+        else{
+        $("#bgi").css("background-image","url("+images[k]+")")};
+    });
+    $("#back").click(function(){
+        k--;
+        if(k<0){
+            k=(images.length-1);
+            $("#bgi").css("background-image","url("+images[k]+")")
+
+        }
+
+        else{
+        $("#bgi").css("background-image","url("+images[k]+")")}
+    })
+    //  $('#s1').click(function(){
+    //     if($('#s1').css('background-color') == 'white'){
+    //     $('#s1').css('background-color')='red'
+    //     }
+    //     else{
+    //         $('#s1').css('background-color','white')
+    //     }
+    //  });
+    //  $('#s2').click(function(){
+    //     $('#s1,#s2').css('color','red')
+    //  })
+    //  $('#s3').click(function(){
+    //     $('#s1,#s2,#s3').css('color','red')
+    //  })
+    //  $('#s4').click(function(){
+    //     $('#s1,#s2,#s3,#s4').css('color','red')
+    //  })
+    //  $('#s5').click(function(){
+    //     $('#s1,#s2,#s3,#s4,#s5').css('color','red')
+    //  })
+
+});
+   </script>  
+</body>
+</html>
